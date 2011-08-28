@@ -1,0 +1,14 @@
+#pay security loan - issue and refund
+#share , closure
+#loan issue
+#payment and reciepts/ reciept and payment - top centr- debit credit  ( reciept payment in order)
+	#date format in reports
+#date format in other
+	#voucher number in payments and all the reports
+	#total in each recpt and payment
+#bank transfer to chitty
+	#suspance account to loan and sb and fd done loan only
+	#Cheque names and voucher number 
+	#delete transaction
+#manual bill printing
+#share to be reviewd - on member details

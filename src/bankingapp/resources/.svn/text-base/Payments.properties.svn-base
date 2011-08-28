@@ -1,0 +1,10 @@
+Form.title=Reciepts/Payments
+jLabel1.text=Amount
+jLabel2.text=Ledger Head
+jButton1.text=OK
+amountText.text=
+debitRadio.text=Reciepts
+creditRadio.text=Payments
+jLabel3.text=Remarks
+remarksText.text=
+Form.AccessibleContext.accessibleName=Reciepts/Payments

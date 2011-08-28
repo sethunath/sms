@@ -1,0 +1,12 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Ledger head management
+jLabel1.text=Ledger head :
+ledgerHeadText.text=
+jButton1.text=Add
+addLedgerHead.Action.text=
+addLedgerHead.Action.shortDescription=
+jMenuItem1.text=Item
+#NOI18N
+jLabel1.font=Tahoma-Plain-14

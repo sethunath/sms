@@ -1,0 +1,7 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Outstanding Payments
+jButton1.text=GetAddress
+jButton2.text=OK
+jDialog1.title=Addresses

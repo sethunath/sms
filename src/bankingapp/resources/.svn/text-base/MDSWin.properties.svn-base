@@ -1,0 +1,6 @@
+Form.title=MDS Payments
+jLabel1.text=Amount
+jButton1.text=OK
+amountText.text=
+jLabel2.text=MDS Scheme
+jLabel3.text=Installment

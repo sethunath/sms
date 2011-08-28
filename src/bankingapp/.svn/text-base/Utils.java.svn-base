@@ -1,0 +1,101 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package bankingapp;
+
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+/**
+ *
+ * @author s
+ */
+public class Utils {
+    public static LedgerHeads getLedgerHead(String head){
+        LedgerHeads lh = null;
+        EntityManager BankingPUEntityManager = javax.persistence.Persistence.createEntityManagerFactory("BankingAppPU").createEntityManager();
+        Query schemeId = BankingPUEntityManager.createQuery("SELECT l from LedgerHeads l where l.ledgerHead = '"+head+"'");
+        lh =  (LedgerHeads) schemeId.getSingleResult();
+        return lh;
+    }
+    public static double getSBAccountBalance(int accountNumber){
+        
+        String sql = null;
+        EntityManager BankingPUEntityManager = javax.persistence.Persistence.createEntityManagerFactory("BankingAppPU").createEntityManager();
+        sql="select sum(withdrawal) from transactions inner join accounts on transactions.account_id = accounts.id where accounts.id = "+accountNumber+" and transactions.lledger_head_id = "+getLedgerHead("SB").getId();
+        Query getSumQuery = BankingPUEntityManager.createNativeQuery(sql);
+        Double d = (Double) ((Vector) getSumQuery.getSingleResult()).get(0);
+        sql="select sum(deposit) from transactions inner join accounts on transactions.account_id = accounts.id where accounts.id = "+accountNumber+" and transactions.lledger_head_id = "+getLedgerHead("SB").getId();
+        getSumQuery = BankingPUEntityManager.createNativeQuery(sql);
+        Double dd = (Double) ((Vector) getSumQuery.getSingleResult()).get(0);
+        d= d==null ? 0 : d;
+        dd= dd==null ? 0 : dd;
+        
+        return dd-d;
+    }
+    public static Object[][] getFDDetails(boolean closed){
+        String sql = "select members.username,members.number,accounts.account_number,transactions.deposit,accounts.commencement,adddate(accounts.commencement,fd_details.duration) as expiry from accounts inner join schemes on accounts.scheme_id = schemes.id inner join members on accounts.member_id = members.id inner join transactions on transactions.account_id = accounts.id inner join fd_details on accounts.id = fd_details.account_id where schemes.scheme = 'FD' ";
+        if(closed){
+            sql+=" and accounts.closed=1";
+        }
+        else{
+            sql+=" and accounts.closed=0";
+        }
+        sql+= " order by accounts.commencement desc ";
+        System.out.println(sql);
+        EntityManager BankingPUEntityManager = javax.persistence.Persistence.createEntityManagerFactory("BankingAppPU").createEntityManager();
+        Query q = BankingPUEntityManager.createNativeQuery(sql);
+        List l = q.getResultList();
+        int i=0;
+        Object[][] o = new Object[l.size()][];
+        for (Iterator it = l.iterator(); it.hasNext();i++) {
+            Vector object = (Vector) it.next();
+            o[i] =  object.toArray();
+        }
+        //System.out.println(l.get(0).getClass());
+        return o;
+    }
+    public static Object[][] getSBDetails(){
+        String sql = "select members.username,members.number,accounts.account_number,round(ifnull(sum(deposit),0)-ifnull(sum(withdrawal),0),2) from accounts inner join schemes on accounts.scheme_id = schemes.id inner join members on members.id = accounts.member_id inner join transactions on transactions.account_id = accounts.id  where schemes.scheme= 'SB' group by accounts.id";
+        System.out.println(sql);
+        EntityManager BankingPUEntityManager = javax.persistence.Persistence.createEntityManagerFactory("BankingAppPU").createEntityManager();
+        Query q = BankingPUEntityManager.createNativeQuery(sql);
+        List l = q.getResultList();
+        int i=0;
+        Object[][] o = new Object[l.size()][];
+        for (Iterator it = l.iterator(); it.hasNext();i++) {
+            Vector object = (Vector) it.next();
+            o[i] =  object.toArray();
+        }
+        //System.out.println(l.get(0).getClass());
+        return o;
+    }
+    public static Date getAccountExpiryDate(int account){
+        String sql = "SELECT adddate(commencement,duration) FROM accounts INNER JOIN fd_details ON accounts.id = fd_details.account_id where accounts.id ="+account;
+        EntityManager BankingPUEntityManager = javax.persistence.Persistence.createEntityManagerFactory("BankingAppPU").createEntityManager();
+        Query q = BankingPUEntityManager.createNativeQuery(sql);
+        Vector v = (Vector) q.getSingleResult();
+        java.sql.Timestamp d =  (Timestamp) v.get(0);
+        Date dd = new Date(d.getTime());
+        return dd;
+    }
+    public static Integer getMaxId(String table){
+        Integer maxId = null;
+        EntityManager BankingPUEntityManager = javax.persistence.Persistence.createEntityManagerFactory("BankingAppPU").createEntityManager();
+        Query query = BankingPUEntityManager.createNativeQuery("SELECT max(id) FROM "+table);
+        //lh =  (LedgerHeads) schemeId.getSingleResult();
+        maxId = (Integer) ((Vector) query.getSingleResult()).get(0);
+        return maxId==null?0:maxId;
+    }
+   
+    public static void main(String args[]){
+       System.out.println(getMaxId("mds"));
+    }
+}

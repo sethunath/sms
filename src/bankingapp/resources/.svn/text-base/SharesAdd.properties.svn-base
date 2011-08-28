@@ -1,0 +1,17 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Shares
+#NOI18N
+criteriaCombo.font=Tahoma 14 Plain
+#NOI18N
+pkText.font=Tahoma 14 Plain
+jButton1.text=OK
+jLabel1.text=No of Shares
+jLabel2.text=Shares to be added
+jLabel3.text=Amount
+presentSharesText.text=
+#NOI18N
+jLabel1.font=Tahoma-Plain-14
+newSharesText.text=
+amoutText.text=

@@ -1,0 +1,19 @@
+Form.title=Loan Issue
+jLabel1.text=Loan Type
+amountText.text=
+jLabel2.text=Amount
+jLabel3.text=Interest
+jLabel4.text=%
+jButton1.text=Issue
+jLabel5.text=Account Number
+jLabel6.text=Type
+interestText.text=
+jLabel7.text=Loan Number
+accno.text=
+p.Action.text=
+p.Action.shortDescription=
+accountNumberText.text=
+#NOI18N
+jLabel1.font=Tahoma-Plain-14
+#NOI18N
+criteriaCombo.font=Tahoma-Plain-14

@@ -1,0 +1,8 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=FD Details
+jRadioButton1.text=Closed
+jRadioButton2.text=Not Closed
+#NOI18N
+jRadioButton1.font=Tahoma-Plain-14

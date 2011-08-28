@@ -1,0 +1,3 @@
+password for admin delete: adminadmi
+DES Passphrase for Encryption: Hello  World Javaa
+database password : testpass

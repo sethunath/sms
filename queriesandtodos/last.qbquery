@@ -1,0 +1,1 @@
+﻿SELECT sum(deposit),sum(withdrawal),transactions.`timestamp` FROM `banking`.`transactions` inner join ledger_heads on transactions.lledger_head_id = ledger_heads.id group by transactions.`timestamp`

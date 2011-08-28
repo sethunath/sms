@@ -1,0 +1,1 @@
+﻿SELECT sum(deposit),sum(withdrawal),lledger_head_id,ledger_heads.ledger_head FROM transactions inner join ledger_heads on ledger_heads.id = transactions.lledger_head_id group by lledger_head_id 

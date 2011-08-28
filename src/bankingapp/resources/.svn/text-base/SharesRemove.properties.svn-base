@@ -1,0 +1,8 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+jButton1.text=OK
+jLabel4.text=Number of Shares
+jLabel5.text=Shares to be Withdrawn
+jLabel6.text=Amount
+Form.title=Share Close

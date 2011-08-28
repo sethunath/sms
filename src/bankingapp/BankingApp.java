@@ -1,0 +1,65 @@
+/*
+ * BankingApp.java
+ */
+
+package bankingapp;
+
+import bankingapp.key.ClientOuth;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Date;
+import org.jdesktop.application.Application;
+import org.jdesktop.application.SingleFrameApplication;
+
+/**
+ * The main class of the application.
+ */
+public class BankingApp extends SingleFrameApplication {
+
+    /**
+     * At startup create and show the main frame of the application.
+     */
+    @Override protected void startup() {
+        show(new BankingView(this));
+    }
+
+    /**
+     * This method is to initialize the specified window by injecting resources.
+     * Windows shown in our application come fully initialized from the GUI
+     * builder, so this additional configuration is not needed.
+     */
+    @Override protected void configureWindow(java.awt.Window root) {
+    }
+
+    /**
+     * A convenient static getter for the application instance.
+     * @return the instance of BankingApp
+     */
+    public static BankingApp getApplication() {
+        return Application.getInstance(BankingApp.class);
+    }
+
+    /**
+     * Main method launching the application.
+     */
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        /** Serial key authentication for app */
+        System.out.println(new Date(111,11,31).getTime());
+        if(notgoodToGo()){
+            return;
+        }
+        launch(BankingApp.class, args);
+    }
+    public static boolean notgoodToGo() throws FileNotFoundException, IOException{
+        //return (new Date()).getTime()>(new Date(110,7,30)).getTime();
+        //FileInputStream fis = new FileInputStream("key.txt");
+        BufferedReader br = new BufferedReader(new FileReader("key.txt"));
+        String l = br.readLine();
+        Date d = new java.sql.Date(Long.parseLong(l.substring(0,13)));
+        System.out.print(d);
+        return (new Date()).getTime()>(d).getTime();
+    }
+}

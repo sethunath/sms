@@ -1,0 +1,28 @@
+CREATE TABLE `banking`.`transaction_details` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `transaction_id` INTEGER UNSIGNED NOT NULL,
+  `remarks` VARCHAR(445) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+truncate `ledger_heads` ;
+INSERT INTO `ledger_heads` (`id`,`ledger_head`) VALUES 
+ (1,'MDS'),
+ (2,'SB'),
+ (3,'SB Interest'),
+ (4,'FD'),
+ (5,'FD Interest'),
+ (6,'Stationary'),
+ (7,'Loan'),
+ (8,'Loan Interest'),
+ (9,'Shares'),
+ (10,'Suspense Account');
+truncate `schemes` ;
+INSERT INTO `schemes` (`id`,`scheme`,`max_installments`,`rate_of_interest`,`interest_days`,`type_deposit_withdrawal`,`cycle_period`,`ledger_head_id`) VALUES 
+ (1,'mds',10,6,20,2,30,1),
+ (9,'PS Loan',NULL,NULL,NULL,NULL,NULL,NULL),
+ (4,'SB',5,5,60,3,0,3),
+ (5,'FD',0,NULL,NULL,NULL,NULL,NULL),
+ (6,'Long Term Loan',NULL,NULL,NULL,NULL,NULL,NULL),
+ (7,'Short Term Loan',NULL,NULL,NULL,NULL,NULL,NULL),
+ (8,'MDS Loan',NULL,NULL,NULL,NULL,NULL,NULL),
+ (10,'HP Loan',NULL,NULL,NULL,NULL,NULL,NULL);

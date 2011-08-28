@@ -1,0 +1,17 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Day Book
+jLabel1.text=Date
+jButton1.text=Show
+showTable.Action.text=
+showTable.Action.shortDescription=
+jButton2.text=print
+printTable.Action.shortDescription=
+printTable.Action.text=
+#NOI18N
+jTable1.font=Tahoma-Plain-14
+openingBalanceLabel.text=
+closingBalanceLabel.text=
+#NOI18N
+jLabel1.font=Tahoma-Plain-14

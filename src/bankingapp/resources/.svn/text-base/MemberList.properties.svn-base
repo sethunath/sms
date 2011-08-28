@@ -1,0 +1,15 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Members
+jButton1.text=print
+printTable.Action.text=
+printTable.Action.shortDescription=
+showCClass.Action.text=
+showCClass.Action.shortDescription=
+jRadioButton1.text=Both A and C
+jLabel1.text=Show
+jRadioButton2.text=C class
+jRadioButton3.text=A Class
+#NOI18N
+jLabel1.font=Tahoma-Plain-14

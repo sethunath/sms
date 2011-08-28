@@ -1,0 +1,13 @@
+query.query=SELECT m FROM Members m
+idLabel.text=Id:
+usernameLabel.text=Username:
+numberLabel.text=Number:
+saveButton.text=Save
+newButton.text=New
+refreshButton.text=Refresh
+entityManager.persistenceUnit=BankingAppPU
+deleteButton.text=Delete
+#NOI18N
+usernameField.font=Tahoma-Plain-14
+#NOI18N
+usernameLabel.font=Tahoma-Plain-14

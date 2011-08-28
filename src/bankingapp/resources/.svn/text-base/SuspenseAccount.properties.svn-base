@@ -1,0 +1,14 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Suspense Account
+#NOI18N
+criteriaCombo2.font=Tahoma 14 Plain
+#NOI18N
+pkText.font=Tahoma 14 Plain
+jButton1.text=OK
+accountBalanceLabel.text=
+jLabel1.text=Amount
+amountText.text=
+save.Action.shortDescription=
+save.Action.text=

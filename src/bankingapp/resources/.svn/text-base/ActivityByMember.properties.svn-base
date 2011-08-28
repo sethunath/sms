@@ -1,0 +1,10 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Activity By Member
+jButton1.text=Go>>
+jLabel1.text=Available Accounts
+jRadioButton1.text=Deposit
+jRadioButton2.text=Withdrawal
+#NOI18N
+jLabel1.font=Tahoma-Plain-14

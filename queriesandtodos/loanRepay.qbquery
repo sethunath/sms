@@ -1,0 +1,1 @@
+﻿SELECT * FROM `banking`.`loans` inner join transactions on transactions.id = loans.transactions_id where transactions.account_id = 28

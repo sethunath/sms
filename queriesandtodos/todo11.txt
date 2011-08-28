@@ -1,0 +1,32 @@
+#reciept and payments - in payments and reciepts
+#member transaction summary
+#mds installmment title
+#backup filename, restore
+#date size and centralization. 
+#sub menu font size
+#reciepts and payments in home menu - make it payments and reciepts
+
+		#backup restore
+		#title for all the reports and SB details
+		#add psl lo loan
+		#probilem with account summary needs clarification is workin fine i guess
+		#member list - a/c classes seperate and show yes /no insted digit
+		#edit in ledger head
+		#mds installment <=> mds payment
+		#seperate ui for salary and areers
+		#correct balances
+		#mds closure
+		#share link 
+		#outstanding payments
+		#suspance account for bank
+		#share closure
+		#opening bal in print
+		#report full size 
+		#address copy-pending staus
+		#member details - resloution date, referrer, recomenderr
+		#menu size
+		#current balance
+		#bill in words 
+		#balance amount on loan in print
+export to pdf
+		#account number on reports

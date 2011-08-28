@@ -1,0 +1,19 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=CashBook
+jLabel1.text=Sort by
+jCheckBox1.text=Category
+jButton1.text=print
+#NOI18N
+jTable1.font=Tahoma-Plain-14
+openingBalanceLabel.text=
+closingBalanceLabel.text=
+jLabel2.text=and
+betweenCheckBox.text=Between
+jButton2.text=Show
+print.first=THE IDUKKI DISTRICT GOVERNMENT EMPLOYEES
+print.second=CO OPERATIVE WELFARE SOCIETY LTD NO: I 592
+print.third=Painavu PO , Idukki - 685 603 | Phone:232568
+#NOI18N
+betweenCheckBox.font=Tahoma-Plain-14

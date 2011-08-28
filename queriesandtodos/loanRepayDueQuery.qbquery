@@ -1,0 +1,1 @@
+﻿select sum(deposit) from transactions where account_id = 28 and lledger_head_id = 7

@@ -1,0 +1,1 @@
+﻿SELECT sum(deposit) as depositsum,sum(withdrawal) as withdrawalsum,SUBSTRING(`timestamp`,1,10) as dateval,ledger_heads.ledger_head as ledger_head FROM `transactions` inner join ledger_heads on ledger_heads.id = transactions.lledger_head_id  group by ledger_heads.ledger_head,SUBSTRING(`timestamp`,1,10)

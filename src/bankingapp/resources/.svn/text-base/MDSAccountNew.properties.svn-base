@@ -1,0 +1,10 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=New MDS Account
+jButton1.text=Create Account
+jLabel1.text=Chittal Number
+jLabel2.text=MDS Scheme
+accNo.text=
+#NOI18N
+criteriaCombo.font=Tahoma-Plain-14
